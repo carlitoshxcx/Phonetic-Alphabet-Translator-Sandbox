@@ -7,7 +7,7 @@ html {
   --color-primary-alternate: #5856d6;
   --color-secondary: #1c1c1e;
   --color-gray: #95959a;
-  --color-gray: #8e8e93;
+  --color-gray-alternate: #8e8e93;
   --color-light-gray: #d1d1d6;
   --color-skeleton: #e5e5ea;
   --color-transparent: #ffffff00;
@@ -68,7 +68,7 @@ body {
   transition: all 0.5s ease-out;
 }
 @media (min-width: 640px) { }
-@media (min-width: 768px) { body { background-color: var(--color-background); } }
+@media (min-width: 640px) { body { background-color: var(--color-background); } }
 @media (min-width: 1024px) { body { background-color: var(--color-background-secondary); } }
 @media (min-width: 1280px) { }
 
@@ -86,9 +86,8 @@ header {
   background-color: var(--color-background);
   border-color: var(--color-transparent);
   border-bottom: 1px solid var(--color-light-gray);
-  /* flex-flow: row; */
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   header {
     margin: 24px 20px 13.5px 20px;
     border: 1px solid var(--color-light-gray);
@@ -142,8 +141,8 @@ h1 {
   transition: all 0.5s ease-out;
   margin-bottom: 5px;
 }
-@media (min-width: 768px) { h1 {display: block;text-align: left;padding-left: 11.5px;padding-bottom: 12.5px;margin-bottom: 0px;}}
-@media (min-width: 1024px) { h1 {display: inline-block;padding-bottom: 0px;}}
+@media (min-width: 640px) { h1 {display: block;text-align: left;padding-left: 11.5px;padding-bottom: 12.5px;margin-bottom: 0px;}}
+@media (min-width: 1024px) { h1 {display: inline-block;padding-bottom: 0px;padding-left: 0px;}}
 
 
 .select {display: inline-block;}
@@ -159,7 +158,7 @@ h1 {
   float: right;
   margin-top: 4px;
 }
-@media (min-width: 768px) { .selector{position: absolute; } }
+@media (min-width: 640px) { .selector{position: absolute; } }
 @media (min-width: 1024px) { .selector{ float: right; } }
 
 
@@ -183,13 +182,14 @@ form input {
   flex: 1;
 }
 @media (min-width: 640px) { form button { min-width: initial;} }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   form input {
     margin-right: 8.75px;
     transition: all 0.5s ease-out;
     margin-left: 11.5px;
     display: flex;
     flex: 1;
+    font-size: var(--fs-5);
   }
 }
 @media (min-width: 1024px) {
@@ -197,13 +197,15 @@ form input {
     width: 167.5px;
     min-height: 30px;
     margin-right: 0px;
-    border-right-width: 0;
+    /* border-right-width: 0; */
+    border-right-color: var(--color-transparent);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     transition: all 0.5s ease-out;
     float: left;
     max-height: 30px;
     padding-right: 0px;
+    font-size: var(--fs-3);
   }
 }
 
@@ -231,7 +233,7 @@ form button {
     min-width: initial;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   form button {
     margin-left: 8.75px;
     transition: all 0.5s ease-out;
@@ -240,6 +242,7 @@ form button {
     flex: 1;
     justify-content: center;
     position: initial;
+    font-size: var(--fs-5);
   }
 }
 @media (min-width: 1024px) {
@@ -249,9 +252,92 @@ form button {
     margin-left: 0px;
     border-top-right-radius: 1px;
     border-bottom-right-radius: 1px;
+    font-size: var(--fs-3);
   }
 }
 
 
 
-/* Result Styles */
+/* result Styles */
+
+.result {
+  padding: 10px;
+}
+@media (min-width: 1024px) {
+  .result {
+    max-width: 792px;
+    margin: 0 auto;
+  }
+}
+
+.result ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1024px) {
+  .result ul {
+    text-align: left;
+  }
+}
+
+.result ul li {
+  border-radius: 1px;
+  background-color: var(--color-background);
+  border: solid 0.5px var(--color-light-gray);
+  display: flex;
+  transition: all 0.3s ease-out;
+}
+.result ul li + li{
+  margin-top: 2.5px;
+}
+@media (min-width: 640px) {
+  .result ul li {
+    width: 50vw;
+    margin: 0 auto;
+    transition: all 0.5s ease-out;
+  }
+}
+@media (min-width: 1024px) {
+  .result ul li {
+    width: 60px;
+    height: 60px;
+    margin: 7.5px 3.75px;
+    display: inline-flex;
+    transition: all 0.2s ease-out;
+    flex-flow: column;
+  }
+}
+
+
+
+.letter {
+  margin-top: 7px;
+  margin-left: 7.5px;
+  margin-bottom: 7px;
+  color: var(--color-secondary);
+  font-size: var(--fs-4);
+  font-weight: 500;
+  display: flex;
+  flex: 1;
+  justify-content: left;
+}
+@media (min-width: 1024px) {
+  .letter {
+  margin: 7.5px 5px;
+  justify-content: center;
+  }
+}
+
+.phonetic {
+  margin-top: 7px;
+  margin-right: 7.5px;
+  margin-bottom: 7px;
+  color: var(--color-gray-alternate);
+  font-size: var(--fs-7);
+  text-transform: lowercase;
+}
+@media (min-width: 1024px) {
+  .phonetic {margin: 7.5px 5px;justify-content: center;display: flex;}
+}
