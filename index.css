@@ -7,11 +7,66 @@ html {
   --color-primary-alternate: #5856d6;
   --color-secondary: #1c1c1e;
   --color-gray: #95959a;
+  --color-gray: #8e8e93;
   --color-light-gray: #d1d1d6;
   --color-skeleton: #e5e5ea;
+  
+  /* Responsive */
+  /* Small */
+  --sm: '640px';
+  /* Medium */
+  --md: '768px';
+  /* Large */
+  --lg: '1024px';
+  /* Extra Large */
+  --xl: '1280px';
+
+  /* Font Sizes */
+  --fs-1: '18px'; /* h1 */
+  --fs-2: '12px'; /* h2 */
+  --fs-3: '10px'; /* h3 */
+  --fs-4: '9px'; /* h4 */
+  --fs-5: '8.5px'; /* h5 */
+  --fs-6: '8px'; /* h6 */
+  --fs-7: '7.5px';
 }
 
+/* Fonts Sizes */
+.fs-1 { font-size: var(--fs-1); }
+.fs-2 { font-size: var(--fs-2); }
+.fs-3 { font-size: var(--fs-3); }
+.fs-4 { font-size: var(--fs-4); }
+.fs-5 { font-size: var(--fs-5); }
+.fs-6 { font-size: var(--fs-6); }
+.fs-7 { font-size: var(--fs-7); }
+
+/* Font Colors */
+.fc-primary     { color: var(--color-primary); }
+.fc-primary     { color: var(--color-primary-alternate); }
+.fc-secondary   { color: var(--color-secondary); }
+.fc-gray        { color: var(--color-gray); }
+.fc-gray        { color: var(--color-gray); }
+.fc-light       { color: var(--color-light-gray); }
+
+/* Background Colors */
+.bc-skeleton    { color: var(--color-skeleton); }
+.bc-background  { color: var(--color-background); }
+.bc-background-secondary  { color: var(--color-background-secondary); }
+
+/* Small (sm) */
+@media (min-width: 640px) { /* ... */ }
+
+/* Medium (md) */
+@media (min-width: 768px) { /* ... */ }
+
+/* Large (lg) */
+@media (min-width: 1024px) { /* ... */ }
+
+/* Extra Large (xl) */
+@media (min-width: 1280px) { /* ... */ }
+
 body {
+  font-family: 'Inter', sans-serif;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
